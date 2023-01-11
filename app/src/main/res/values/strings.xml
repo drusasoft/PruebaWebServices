@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">PruebaWebServices</string>
+    
+    <string name="app_name">Prueba WebServices</string>
+    
+    <!-- Fragment Menu principal -->
+    <string name="txtFragmentMenuPrincipal">App donde pruebo los webservices para ver si alguno es util para usarlo
+        en alguna de mis Apps</string>
+    <string name="txtOpcionWSPersonas">WebServices Personas</string>
+
+    <!-- Fragment WebServices Personas-->
+    <string name="titFragmentWSPersonas">WebService Personas</string>
+    <string name="txtFragmentWSPersonas">Web Services que genera de foma aleatoria datos de contacto de personas
+        (Nombre, apellidos, pais, email, foto...etc)</string>
+
 </resources>

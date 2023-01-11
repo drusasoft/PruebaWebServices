@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_app_webservices"
+    app:startDestination="@id/fragmentMenuPrincipal">
+
+    <fragment
+        android:id="@+id/fragmentMenuPrincipal"
+        android:name="com.aar.pruebawebservices.fragments.FragmentMenuPrincipal"
+        android:label="FragmentMenuPrincipal">
+
+        <action
+            android:id="@+id/irFragmentWSPersonas"
+            app:destination="@id/fragmentWSPersonas"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentWSPersonas"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSPersonas"
+        android:label="FragmentWSPersonas" />
+
+</navigation>
