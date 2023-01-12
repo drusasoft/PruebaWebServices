@@ -11,5 +11,6 @@
     <string name="titFragmentWSPersonas">WebService Personas</string>
     <string name="txtFragmentWSPersonas">Web Services que genera de foma aleatoria datos de contacto de personas
         (Nombre, apellidos, pais, email, foto...etc)</string>
+    <string name="errorConexionWS">Error Conexion WS</string>
 
 </resources>
