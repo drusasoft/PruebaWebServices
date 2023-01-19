@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.widget.Toast
 import com.aar.pruebawebservices.R
+import com.aar.pruebawebservices.database.PersonaDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +17,7 @@ import kotlin.Exception
 
 
 
-class RepositorioPersonasWS(private val context: Context)
+class RepositorioPersonasWS(private val context: Context, private val dataBase:PersonaDao)
 {
     //URL Ejemplo = https://randomuser.me/api/?results=10
     private val URL_BASE = "https://randomuser.me/"
@@ -39,8 +40,11 @@ class RepositorioPersonasWS(private val context: Context)
 
             //Se llama al metodo definido en la interfaz PersonaService que hace la peticion al WS y devueve los resultados mapeados en un Objeto del tipo DatosPersonaWS
             val datosPersonasWS = retrofitService.getPersonas(numResultados)
+            Log.e("Datos Personas WS", "${datosPersonasWS}")
 
-            Log.e("Datos Personas", "${datosPersonasWS.results}")
+            //Se convierten los datos obtenidos del WS a la estructura de datos usados en la Base de Datos local y se almacenan
+            val datosPersonasBD = datosPersonasWS.toDatosPersonasBD()
+            dataBase.insertarPersonas(datosPersonasBD)
 
         }catch (exception:Exception)
         {
