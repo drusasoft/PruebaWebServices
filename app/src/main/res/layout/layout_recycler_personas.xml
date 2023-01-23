@@ -37,6 +37,20 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:textColor="@color/color_texto"
+                    android:fontFamily="@font/aldrich"/>
+
+                <TextView
+                    android:id="@+id/textViewRecyclerPais"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_texto"
                     android:fontFamily="@font/aldrich"/>
 
             </LinearLayout>

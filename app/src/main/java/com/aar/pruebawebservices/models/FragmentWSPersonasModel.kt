@@ -35,4 +35,12 @@ class FragmentWSPersonasModel(private val context: Context, private val dataBase
     }
 
 
+
+    //Se marcan como deseleccionados todos los elementos de la BD
+    fun deseleccionarTodos()
+    {
+        coroutineScopeIO.launch { dataBase.deseleccionarPersonas() }
+    }
+
+
 }

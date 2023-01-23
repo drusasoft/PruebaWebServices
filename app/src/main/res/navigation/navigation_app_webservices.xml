@@ -18,6 +18,29 @@
     <fragment
         android:id="@+id/fragmentWSPersonas"
         android:name="com.aar.pruebawebservices.fragments.FragmentWSPersonas"
-        android:label="FragmentWSPersonas" />
+        android:label="FragmentWSPersonas">
+
+        <action
+            android:id="@+id/irFragmentZoomImagen"
+            app:destination="@id/fragmentZoomImagen"/>
+        <action
+            android:id="@+id/irFragmentDetallesPersona"
+            app:destination="@id/fragmentDetallesPersona" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentZoomImagen"
+        android:name="com.aar.pruebawebservices.fragments.FragmentZoomImagen"
+        android:label="FragmentZoomImagen"/>
+
+    <fragment
+        android:id="@+id/fragmentDetallesPersona"
+        android:name="com.aar.pruebawebservices.fragments.FragmentDetallesPersona"
+        android:label="FragmentDetallesPersona">
+        <action
+            android:id="@+id/irFragmentZoomImagenDetelles"
+            app:destination="@id/fragmentZoomImagen" />
+    </fragment>
 
 </navigation>

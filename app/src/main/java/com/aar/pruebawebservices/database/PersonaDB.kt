@@ -1,9 +1,12 @@
 package com.aar.pruebawebservices.database
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "Personas")
 data class PersonaDB(
 
@@ -34,4 +37,4 @@ data class PersonaDB(
     @ColumnInfo(name = "seleccionada")
     val seleccionada:Boolean
 
-)
+):Parcelable

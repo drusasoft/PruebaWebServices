@@ -5,11 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.adapters.PersonasAdapter
 import com.aar.pruebawebservices.databinding.LayoutFragmentWsPersonasBinding
 import com.aar.pruebawebservices.models.FragmentWSPersonasModel
@@ -37,10 +39,25 @@ class FragmentWSPersonas: Fragment()
         val binding = LayoutFragmentWsPersonasBinding.inflate(inflater, container, false)
 
         //Se instancia el RecyclerView y su Adapter
-        adapterRecycler = PersonasAdapter({
+        adapterRecycler = PersonasAdapter({personaDB, elemPulsado->
 
             //lambda que se ejecuta cuando se hace una pulsacion sobre un elemeto del Recycler
-            Toast.makeText(requireContext(), "Pulsacion Normal", Toast.LENGTH_LONG).show()
+
+            val bundle = Bundle()
+
+            if(elemPulsado == "imageViewRecyclerFoto")
+            {
+                //Si se pulsa solo sobre el ImageView de la foto, se navega al Fragment ZoomImagen
+                bundle.putString("UrlImagen", personaDB.foto)
+                navController.navigate(R.id.irFragmentZoomImagen, bundle)
+            }
+            else
+            {
+                //Se navega al frgament que muestra todos los datos de la Persona
+                bundle.putParcelable("DatosPersona", personaDB)
+                navController.navigate(R.id.irFragmentDetallesPersona, bundle)
+            }
+
 
         },{
 
@@ -74,6 +91,17 @@ class FragmentWSPersonas: Fragment()
         //Se declaran los Observers para las variables LiveData
         setObservers()
     }
+
+
+
+    override fun onDestroyView()
+    {
+        super.onDestroyView()
+
+        //Al salir del fragment se deseleccionan todos los elementos que estuvieran seleccionados de  la BD
+        model.deseleccionarTodos()
+    }
+
 
 
     //Se registran los Observers para las variables LiveData definidas en el Model

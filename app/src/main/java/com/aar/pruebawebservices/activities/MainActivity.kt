@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity()
                 controller.graph.startDestinationId->{ binding.toolBar.setTitle(R.string.app_name) }
 
                 R.id.fragmentWSPersonas->{ binding.toolBar.setTitle(R.string.titFragmentWSPersonas) }
+                R.id.fragmentZoomImagen->{ binding.toolBar.setTitle(R.string.titFragemntZoomImagen)}
+                R.id.fragmentDetallesPersona->{ binding.toolBar.setTitle(R.string.titFragmentDetalles) }
             }
 
         }
