@@ -28,6 +28,7 @@ class FragmentMenuPrincipal: Fragment()
         //************************************* ClickListeners *************************************
 
         binding.txtOpcionWSPersonas.setOnClickListener { navController.navigate(R.id.irFragmentWSPersonas) }
+        binding.txtOpcionWSConsultarIP.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP) }
 
         //*********************************** Fin ClickListeners ***********************************
 

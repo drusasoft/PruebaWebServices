@@ -6,17 +6,21 @@
     <string name="txtFragmentMenuPrincipal">App donde pruebo los webservices para ver si alguno es util para usarlo
         en alguna de mis Apps</string>
     <string name="txtOpcionWSPersonas">WebServices Personas</string>
+    <string name="txtOpcionWSConsultarIP">WebServices Datos IP</string>
 
-    <!-- Fragment WebServices Personas-->
+    <!-- Fragment WebServices Personas -->
     <string name="titFragmentWSPersonas">WebService Personas</string>
     <string name="txtFragmentWSPersonas">Web Services que genera de foma aleatoria datos de contacto de personas
         (Nombre, apellidos, pais, email, foto...etc)</string>
     <string name="errorConexionWS">Error Conexion WS</string>
 
-    <!-- Fragment Zoom Imagen-->
+    <!-- Fragment Zoom Imagen -->
     <string name="titFragemntZoomImagen">Zoom</string>
 
-    <!-- Fragment Detalles Persona-->
+    <!-- Fragment Detalles Persona -->
     <string name="titFragmentDetalles">Detalles Persona</string>
+
+    <!-- Fragment Consultar IP -->
+    <string name="titFragmentConsultarIP">Consultar IP</string>
 
 </resources>

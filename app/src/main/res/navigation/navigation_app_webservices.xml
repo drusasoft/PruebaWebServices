@@ -13,6 +13,10 @@
             android:id="@+id/irFragmentWSPersonas"
             app:destination="@id/fragmentWSPersonas"/>
 
+        <action
+            android:id="@+id/irFragmentWSConsultarIP"
+            app:destination="@id/fragmentWSConsultarIP" />
+
     </fragment>
 
     <fragment
@@ -23,6 +27,7 @@
         <action
             android:id="@+id/irFragmentZoomImagen"
             app:destination="@id/fragmentZoomImagen"/>
+
         <action
             android:id="@+id/irFragmentDetallesPersona"
             app:destination="@id/fragmentDetallesPersona" />
@@ -38,9 +43,16 @@
         android:id="@+id/fragmentDetallesPersona"
         android:name="com.aar.pruebawebservices.fragments.FragmentDetallesPersona"
         android:label="FragmentDetallesPersona">
+
         <action
             android:id="@+id/irFragmentZoomImagenDetelles"
-            app:destination="@id/fragmentZoomImagen" />
+            app:destination="@id/fragmentZoomImagen"/>
+
     </fragment>
+
+    <fragment
+        android:id="@+id/fragmentWSConsultarIP"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSConsultarIP"
+        android:label="FragmentWSConsultarIP" />
 
 </navigation>
