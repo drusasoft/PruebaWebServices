@@ -53,6 +53,17 @@
     <fragment
         android:id="@+id/fragmentWSConsultarIP"
         android:name="com.aar.pruebawebservices.fragments.FragmentWSConsultarIP"
-        android:label="FragmentWSConsultarIP" />
+        android:label="FragmentWSConsultarIP">
+
+        <action
+            android:id="@+id/irFragmentDetallesIP"
+            app:destination="@id/fragmentDetallesIP"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDetallesIP"
+        android:name="com.aar.pruebawebservices.fragments.FragmentDetallesIP"
+        android:label="FragmentDetallesIP" />
 
 </navigation>

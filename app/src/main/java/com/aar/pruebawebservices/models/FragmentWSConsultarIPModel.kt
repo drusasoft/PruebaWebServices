@@ -3,6 +3,7 @@ package com.aar.pruebawebservices.models
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.aar.pruebawebservices.webservice.ConsultarIPService
+import com.aar.pruebawebservices.webservice.RepositorioConsultarIPWS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -16,36 +17,25 @@ import retrofit2.create
 class FragmentWSConsultarIPModel:ViewModel()
 {
 
+    //Repositorio deonde se realzia la Conexion con el WS
+    val repositorioConsultarIPWS = RepositorioConsultarIPWS()
+
     //************************************ Coroutina en Hilo IO ************************************
     private val viewModelJob = Job()
     private val coroutineScopeIO = CoroutineScope(viewModelJob + Dispatchers.IO)
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-
+    val datosWSLive = repositorioConsultarIPWS.datosIPWSLive//Variable Livedata con los datos obtenidos del WS, que esta definida en el Repositorio
     //*********************************** Fin Variables LiveData ***********************************
 
-    private lateinit var retrofitService:ConsultarIPService
 
 
 
-
-    fun pruebaConectarWSIP()
+    //Se realiza la conexion con WS
+    fun conectarWSIP(direccionIP:String)
     {
-        val URL_BASE = "https://ipgeolocation.abstractapi.com/"
-
-        retrofitService = Retrofit.Builder()
-            //.addConverterFactory(GsonConverterFactory.create())
-            .addConverterFactory(ScalarsConverterFactory.create())//Para pruebas, se obtiene en formato String toda la respuesta del WS
-            .baseUrl(URL_BASE)
-            .build()
-            .create()
-
-        coroutineScopeIO.launch {
-            val resultado = retrofitService.getDatosIP("cb71b89ab513414b920bff9be723c36c", "166.171.248.255")
-            Log.e("Conexion WS", "OK")
-            Log.e("Resultado WS", "${resultado}")
-        }
+        coroutineScopeIO.launch { repositorioConsultarIPWS.conexionWS(direccionIP) }
     }
 
 }

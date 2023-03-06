@@ -22,5 +22,7 @@
 
     <!-- Fragment Consultar IP -->
     <string name="titFragmentConsultarIP">Consultar IP</string>
+    <string name="hintIP">Insertar IP</string>
+    <string name="txtBotonConsultarIP">Consultar IP</string>
 
 </resources>

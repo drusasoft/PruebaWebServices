@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="Fragment Consultar IP"/>
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:shapeAppearance="@style/cardViewBordeRecortados"
+        app:strokeColor="@color/indigo_500">
 
-    <Button
-        android:id="@+id/btnConexionWS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_gravity="center"
-        android:text="Consultar IP"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/hintIP">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextIP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConexionWS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:text="@string/txtBotonConsultarIP"
+                app:shapeAppearance="@style/botonBordeRecortados"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
