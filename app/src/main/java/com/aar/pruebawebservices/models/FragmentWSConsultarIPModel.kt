@@ -1,5 +1,6 @@
 package com.aar.pruebawebservices.models
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.aar.pruebawebservices.webservice.ConsultarIPService
@@ -14,11 +15,11 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
 
 
-class FragmentWSConsultarIPModel:ViewModel()
+class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
 {
 
     //Repositorio deonde se realzia la Conexion con el WS
-    val repositorioConsultarIPWS = RepositorioConsultarIPWS()
+    val repositorioConsultarIPWS = RepositorioConsultarIPWS(context)
 
     //************************************ Coroutina en Hilo IO ************************************
     private val viewModelJob = Job()
@@ -31,6 +32,10 @@ class FragmentWSConsultarIPModel:ViewModel()
 
 
 
+    fun limpiarVariablesLiveData()
+    {
+        repositorioConsultarIPWS.datosIPWSLive.value?.ip_address = ""
+    }
 
     //Se realiza la conexion con WS
     fun conectarWSIP(direccionIP:String)

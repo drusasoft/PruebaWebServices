@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity()
                 R.id.fragmentZoomImagen->{ binding.toolBar.setTitle(R.string.titFragemntZoomImagen)}
                 R.id.fragmentDetallesPersona->{ binding.toolBar.setTitle(R.string.titFragmentDetalles) }
                 R.id.fragmentWSConsultarIP->{ binding.toolBar.setTitle(R.string.titFragmentConsultarIP)}
+                R.id.fragmentDetallesIP->{ binding.toolBar.setTitle(R.string.titFragmentDetallesIP)}
             }
 
         }

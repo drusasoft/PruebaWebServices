@@ -1,7 +1,10 @@
 package com.aar.pruebawebservices.webservice
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
+import com.aar.pruebawebservices.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +16,7 @@ import retrofit2.create
 
 
 
-class RepositorioConsultarIPWS
+class RepositorioConsultarIPWS(private val context: Context)
 {
     //Ej de URL = "https://ipgeolocation.abstractapi.com/v1/?api_key=cb71b89ab513414b920bff9be723c36c&ip_address=166.171.248.255"
     private val URL_BASE = "https://ipgeolocation.abstractapi.com/"
@@ -45,8 +48,6 @@ class RepositorioConsultarIPWS
 
         try
         {
-            Log.e("Direccion IP 2", direccionIP)
-
             //Se consulta en el WS, los datos de la IP pasada como parametro
             val resultadoWS = retrofitService.getDatosIP("cb71b89ab513414b920bff9be723c36c", direccionIP)
 
@@ -55,7 +56,7 @@ class RepositorioConsultarIPWS
 
         }catch (exception:Exception)
         {
-            Log.e("Error WS", "Se ha producido un Error en la Consulta WS")
+            Toast.makeText(context, R.string.txtErrorConsultaWS, Toast.LENGTH_LONG).show()
         }
 
     }

@@ -24,5 +24,14 @@
     <string name="titFragmentConsultarIP">Consultar IP</string>
     <string name="hintIP">Insertar IP</string>
     <string name="txtBotonConsultarIP">Consultar IP</string>
+    <string name="txtErrorConsultaWS">Error WS: Se ha producido un Error en la Consulta WS</string>
+    <string name="titCity">City:</string>
+    <string name="titRegion">Region:</string>
+    <string name="titCountry">Country:</string>
+    <string name="titLat">Latitude:</string>
+    <string name="titLng">Longitude:</string>
+
+    <!-- Fragment Detalles IP -->
+    <string name="titFragmentDetallesIP">Datos IP</string>
 
 </resources>
