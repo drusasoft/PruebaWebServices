@@ -1,9 +1,7 @@
 package com.aar.pruebawebservices.models
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.aar.pruebawebservices.webservice.ConsultarIPService
 import com.aar.pruebawebservices.webservice.RepositorioConsultarIPWS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +11,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
+
+
+
 
 
 class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
@@ -27,14 +28,14 @@ class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-    val datosWSLive = repositorioConsultarIPWS.datosIPWSLive//Variable Livedata con los datos obtenidos del WS, que esta definida en el Repositorio
+    val datosWSLive = repositorioConsultarIPWS.datosIPLive//Variable Livedata con los datos obtenidos del WS, que esta definida en el Repositorio
     //*********************************** Fin Variables LiveData ***********************************
 
 
 
     fun limpiarVariablesLiveData()
     {
-        repositorioConsultarIPWS.datosIPWSLive.value?.ip_address = ""
+        repositorioConsultarIPWS.datosIPLive.value?.direccion_ip = "--"
     }
 
     //Se realiza la conexion con WS

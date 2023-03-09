@@ -20,7 +20,7 @@ data class Results(
 )
 
 data class Id(
-    val value:String
+    val value:String?
 )
 
 data class Name(

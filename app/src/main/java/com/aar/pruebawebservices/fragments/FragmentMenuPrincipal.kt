@@ -29,6 +29,7 @@ class FragmentMenuPrincipal: Fragment()
 
         binding.txtOpcionWSPersonas.setOnClickListener { navController.navigate(R.id.irFragmentWSPersonas) }
         binding.txtOpcionWSConsultarIP.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP) }
+        binding.txtOpcionWSConsultarHora.setOnClickListener { navController.navigate(R.id.irFragmentConsultarHoraMundial) }
 
         //*********************************** Fin ClickListeners ***********************************
 

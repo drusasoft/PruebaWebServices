@@ -76,9 +76,9 @@ class FragmentWSConsultarIP:Fragment()
             Log.e("Datos IP", "${datosIP}")
 
             //Se comprueba si el WS ha devuelto datos para IP Consultada
-            if(!datosIP.ip_address.isEmpty())
+            if(datosIP.direccion_ip != "--")
             {
-                val direccionIP = datosIP.ip_address
+                val direccionIP = datosIP.direccion_ip
 
                 //Se navega al Fragment DetallesIP pasandole como parametro los datos devueltos por el WS
                 val bundle = Bundle()

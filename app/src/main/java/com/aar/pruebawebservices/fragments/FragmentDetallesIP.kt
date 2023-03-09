@@ -1,14 +1,16 @@
 package com.aar.pruebawebservices.fragments
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.aar.pruebawebservices.databinding.LayoutFragmentDetallesIpBinding
-import com.aar.pruebawebservices.webservice.DatosIPWS
+import com.aar.pruebawebservices.utils.DatosIP
 import com.squareup.picasso.Picasso
+
+
+
 
 
 class FragmentDetallesIP:Fragment()
@@ -16,7 +18,7 @@ class FragmentDetallesIP:Fragment()
 
     private lateinit var binding: LayoutFragmentDetallesIpBinding
     private var direccionIP:String? = null
-    private var datosIP:DatosIPWS? = null
+    private var datosIP: DatosIP? = null
 
 
 
@@ -36,17 +38,17 @@ class FragmentDetallesIP:Fragment()
     {
         binding = LayoutFragmentDetallesIpBinding.inflate(inflater, container, false)
 
-        //Se en al IU todos los datos sobre la IP consultada, psados como parametros a este Frgament
+        //Se muestra en al IU todos los datos sobre la IP consultada, pasados como parametros a este Frgament
         datosIP?.let {
 
-            Picasso.get().load(it.flag.png).into(binding.imageViewBandera)
+            Picasso.get().load(it.bandera).into(binding.imageViewBandera)
 
             binding.txtDireccionIP.text = direccionIP
-            binding.txtCity.text = it.city
+            binding.txtCity.text = it.ciudad
             binding.txtRegion.text = it.region
-            binding.txtCountry.text = it.country
-            binding.txtLat.text = it.latitude.toString()
-            binding.txtLng.text = it.longitude.toString()
+            binding.txtCountry.text = it.pais
+            binding.txtLat.text = it.latitud
+            binding.txtLng.text = it.longitud
 
         }
 

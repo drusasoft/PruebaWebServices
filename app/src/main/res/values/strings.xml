@@ -7,6 +7,7 @@
         en alguna de mis Apps</string>
     <string name="txtOpcionWSPersonas">WebServices Personas</string>
     <string name="txtOpcionWSConsultarIP">WebServices Datos IP</string>
+    <string name="txtOpcionWSConsultarCP">WebServices Hora Mundial</string>
 
     <!-- Fragment WebServices Personas -->
     <string name="titFragmentWSPersonas">WebService Personas</string>
@@ -33,5 +34,8 @@
 
     <!-- Fragment Detalles IP -->
     <string name="titFragmentDetallesIP">Datos IP</string>
+
+    <!-- Fragment Consultar Hora Mundial -->
+    <string name="titFragmentConsultarHoraMundial">Consultar Hora</string>
 
 </resources>

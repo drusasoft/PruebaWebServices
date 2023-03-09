@@ -15,7 +15,11 @@
 
         <action
             android:id="@+id/irFragmentWSConsultarIP"
-            app:destination="@id/fragmentWSConsultarIP" />
+            app:destination="@id/fragmentWSConsultarIP"/>
+
+        <action
+            android:id="@+id/irFragmentConsultarHoraMundial"
+            app:destination="@id/fragmentConsultarHoraMundial"/>
 
     </fragment>
 
@@ -64,6 +68,11 @@
     <fragment
         android:id="@+id/fragmentDetallesIP"
         android:name="com.aar.pruebawebservices.fragments.FragmentDetallesIP"
-        android:label="FragmentDetallesIP" />
+        android:label="FragmentDetallesIP"/>
+
+    <fragment
+        android:id="@+id/fragmentConsultarHoraMundial"
+        android:name="com.aar.pruebawebservices.fragments.FragmentConsultarHoraMundial"
+        android:label="FragmentConsultarHoraMundial"/>
 
 </navigation>

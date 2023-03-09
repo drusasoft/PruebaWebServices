@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.aar.pruebawebservices.R
+import com.aar.pruebawebservices.utils.DatosIP
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class RepositorioConsultarIPWS(private val context: Context)
     private val retrofitService:ConsultarIPService
 
     //Variable del tipo LiveData que contendra los datos sobre la IP
-    val datosIPWSLive = MutableLiveData<DatosIPWS>()
+    val datosIPLive = MutableLiveData<DatosIP>()
 
 
     init
@@ -52,11 +53,15 @@ class RepositorioConsultarIPWS(private val context: Context)
             val resultadoWS = retrofitService.getDatosIP("cb71b89ab513414b920bff9be723c36c", direccionIP)
 
             //Para poder guardar los datos en una varible Livedata, solo se puede hacer en el hilo principal
-            CoroutineScope(Dispatchers.Main).launch { datosIPWSLive.value = resultadoWS }
+            CoroutineScope(Dispatchers.Main).launch {
+
+                datosIPLive.value = resultadoWS.toDatosIP()//Se llama al funcion de Extension que he definido, para convertir los datos a la estructura usada por el FragmentDetallesIP
+            }
 
         }catch (exception:Exception)
         {
-            Toast.makeText(context, R.string.txtErrorConsultaWS, Toast.LENGTH_LONG).show()
+            //Para poder mostrar un mensaje Toast solo se puede hacer en el hilo principal
+            CoroutineScope(Dispatchers.Main).launch { Toast.makeText(context, R.string.txtErrorConsultaWS, Toast.LENGTH_LONG).show() }
         }
 
     }
