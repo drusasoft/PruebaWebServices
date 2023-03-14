@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.aar.pruebawebservices.database.PersonaDao
 import com.aar.pruebawebservices.models.FragmentWSPersonasModel
 
+@Suppress("UNCHECKED_CAST")
 class FragmentWSPersonasModelFactory(private val context:Context, private val dataBase:PersonaDao):ViewModelProvider.Factory
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T

@@ -72,7 +72,7 @@
 
     <fragment
         android:id="@+id/fragmentConsultarHoraMundial"
-        android:name="com.aar.pruebawebservices.fragments.FragmentConsultarHoraMundial"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSConsultarHoraMundial"
         android:label="FragmentConsultarHoraMundial"/>
 
 </navigation>

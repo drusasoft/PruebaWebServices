@@ -12,4 +12,13 @@
         android:fontFamily="@font/aldrich"
         android:text="Fragment Consultar Hora Mundial"/>
 
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConexionWS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center"
+        android:text="Consultar Hora"/>
+
 </LinearLayout>
