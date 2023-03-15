@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity()
                 R.id.fragmentWSConsultarIP->{ binding.toolBar.setTitle(R.string.titFragmentConsultarIP)}
                 R.id.fragmentDetallesIP->{ binding.toolBar.setTitle(R.string.titFragmentDetallesIP)}
                 R.id.fragmentConsultarHoraMundial->{ binding.toolBar.setTitle(R.string.titFragmentConsultarHoraMundial) }
+                R.id.fragmentDetallesHora->{ binding.toolBar.setTitle(R.string.titFragmentDetallesHora)}
             }
 
         }

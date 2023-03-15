@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -30,6 +31,7 @@ class FragmentMenuPrincipal: Fragment()
         binding.txtOpcionWSPersonas.setOnClickListener { navController.navigate(R.id.irFragmentWSPersonas) }
         binding.txtOpcionWSConsultarIP.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP) }
         binding.txtOpcionWSConsultarHora.setOnClickListener { navController.navigate(R.id.irFragmentConsultarHoraMundial) }
+        binding.txtOpcionWSConsultarMoneda.setOnClickListener { Toast.makeText(requireContext(), "Aun no hecho", Toast.LENGTH_LONG).show() }
 
         //*********************************** Fin ClickListeners ***********************************
 

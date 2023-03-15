@@ -29,8 +29,13 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-    //....
+    val datosWSLive =repositorioConsultarHoraWS.datosHoraLive
     //*********************************** Fin Variables LiveData ***********************************
+
+
+
+
+    fun limpiarVariablesLiveData() { datosWSLive.value = null }
 
 
 
@@ -39,32 +44,5 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
     {
         coroutineScopeIO.launch { repositorioConsultarHoraWS.conexionWS(localizacion) }
     }
-
-
-    //************ Para pruebas ************************
-    /*private val retrofitService:HoraService
-    private val URL_BASE = "https://timezone.abstractapi.com/"
-
-    init
-    {
-        retrofitService = Retrofit.Builder()
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .baseUrl(URL_BASE)
-            .build()
-            .create()
-    }
-
-    fun pruebaConexionWS()
-    {
-        coroutineScopeIO.launch {
-
-            val location = "Tokyo, Japan"
-            val resultado = retrofitService.getHora("f54d2ec0c6cd44979a501f481dbf6027", location)
-
-            Log.e("Resultado", resultado)
-        }
-    }*/
-
-    //*********** Fin para Pruebas ******************
 
 }

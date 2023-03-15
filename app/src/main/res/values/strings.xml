@@ -8,6 +8,7 @@
     <string name="txtOpcionWSPersonas">WebServices Personas</string>
     <string name="txtOpcionWSConsultarIP">WebServices Datos IP</string>
     <string name="txtOpcionWSConsultarCP">WebServices Hora Mundial</string>
+    <string name="txtOpcionWSConsultarMoneda">WebServices Moneda</string>
 
     <!-- Fragment WebServices Personas -->
     <string name="titFragmentWSPersonas">WebService Personas</string>
@@ -26,16 +27,24 @@
     <string name="hintIP">Insertar IP</string>
     <string name="txtBotonConsultarIP">Consultar IP</string>
     <string name="txtErrorConsultaWS">Error WS: Se ha producido un Error en la Consulta WS</string>
+
+    <!-- Fragment Detalles IP -->
+    <string name="titFragmentDetallesIP">Datos IP</string>
     <string name="titCity">City:</string>
     <string name="titRegion">Region:</string>
     <string name="titCountry">Country:</string>
     <string name="titLat">Latitude:</string>
     <string name="titLng">Longitude:</string>
 
-    <!-- Fragment Detalles IP -->
-    <string name="titFragmentDetallesIP">Datos IP</string>
-
     <!-- Fragment Consultar Hora Mundial -->
     <string name="titFragmentConsultarHoraMundial">Consultar Hora</string>
+    <string name="titInsertarDatos">Insertar Datos</string>
+    <string name="hintLocalidad">Localidad</string>
+    <string name="hintPais">Pais</string>
+    <string name="txtBtnConsultarHora">Consultar Hora</string>
+    <string name="txtErrorInsertarDatos">Se deben insertar todos los datos</string>
+
+    <!-- Fragment Detalles Hora -->
+    <string name="titFragmentDetallesHora">Hora Actual</string>
 
 </resources>
