@@ -29,7 +29,7 @@
                 android:textColor="@color/indigo_700"
                 android:textStyle="bold"
                 android:textSize="22sp"
-                android:text="Hora Actual"/>
+                android:text="@string/titFragmentDetallesHora"/>
 
             <View
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/titTimeZone"
+                    android:id="@+id/titDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
@@ -50,8 +50,29 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/indigo_500"
-                    android:text="Time Zone: "
+                    android:text="@string/titDate"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/titDate"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/titDate"/>
+
+                <TextView
+                    android:id="@+id/titTimeZone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/indigo_500"
+                    android:text="@string/titTimeZone"
+                    app:layout_constraintTop_toBottomOf="@+id/titDate"
                     app:layout_constraintStart_toStartOf="parent"/>
 
                 <TextView
@@ -63,8 +84,84 @@
                     app:layout_constraintBaseline_toBaselineOf="@+id/titTimeZone"/>
 
 
+                <TextView
+                    android:id="@+id/titTimeZoneLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/indigo_500"
+                    android:text="@string/titTimeZoneLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/titTimeZone"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtTimeZoneLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/titTimeZoneLocation"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/titTimeZoneLocation"/>
+
+
+                <TextView
+                    android:id="@+id/titGmtOffset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/indigo_500"
+                    android:text="@string/titGmtOffset"
+                    app:layout_constraintTop_toBottomOf="@+id/titTimeZoneLocation"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtGmtOffset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/titGmtOffset"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/titGmtOffset"/>
+
+                <TextView
+                    android:id="@+id/titLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/indigo_500"
+                    android:text="@string/titLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/titGmtOffset"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/titLocation"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/titLocation"/>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/txtRelojDigital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/aldrich"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textColor="@color/indigo_500"/>
 
         </LinearLayout>
 

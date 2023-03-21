@@ -43,8 +43,16 @@
     <string name="hintPais">Pais</string>
     <string name="txtBtnConsultarHora">Consultar Hora</string>
     <string name="txtErrorInsertarDatos">Se deben insertar todos los datos</string>
+    <string name="txtNoExisteLocalidad">Error, Localidad no Encontrada</string>
+    <string name="txtExceptionGeocoder">Exception, Localidad no Encontrada</string>
+    <string name="txtErrorLocalidadWS">Error WS, Localidad no Encontrada</string>
 
     <!-- Fragment Detalles Hora -->
     <string name="titFragmentDetallesHora">Hora Actual</string>
+    <string name="titDate">Date:</string>
+    <string name="titTimeZone">Time Zone:</string>
+    <string name="titTimeZoneLocation">Time Zone Location:</string>
+    <string name="titGmtOffset">GMT Offset:</string>
+    <string name="titLocation">Location:</string>
 
 </resources>

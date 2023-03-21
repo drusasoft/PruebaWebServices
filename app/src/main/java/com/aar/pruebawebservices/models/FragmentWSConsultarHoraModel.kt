@@ -1,8 +1,11 @@
 package com.aar.pruebawebservices.models
 
 import android.content.Context
+import android.location.Geocoder
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.webservice.HoraService
 import com.aar.pruebawebservices.webservice.RepositorioConsultarHoraWS
 import kotlinx.coroutines.CoroutineScope
@@ -12,9 +15,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
-
-
-
+import java.util.*
 
 
 class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
@@ -29,7 +30,7 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-    val datosWSLive =repositorioConsultarHoraWS.datosHoraLive
+    val datosWSLive = repositorioConsultarHoraWS.datosHoraLive
     //*********************************** Fin Variables LiveData ***********************************
 
 
@@ -40,9 +41,29 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
 
 
     //Se realiza la conexion con WS
-    fun conexionWS(localizacion:String)
+    fun conexionWS(localidad:String, pais:String)
     {
-        coroutineScopeIO.launch { repositorioConsultarHoraWS.conexionWS(localizacion) }
+        //Antes de consultar la hora en el WS de la localidad introducida por el usuario, se comprueba que dicha localidad existe en Geocoder
+        val geocoder = Geocoder(context, Locale.getDefault())
+
+        try
+        {
+            val listaLocalidades = geocoder.getFromLocationName("${localidad}\n${pais}", 1)
+
+            if(listaLocalidades.size > 0)
+            {
+                coroutineScopeIO.launch { repositorioConsultarHoraWS.conexionWS("${localidad}, ${pais}") }
+
+            }else
+            {
+                Toast.makeText(context, R.string.txtNoExisteLocalidad, Toast.LENGTH_LONG).show()
+            }
+
+        }catch (exception:Exception)
+        {
+            Toast.makeText(context, R.string.txtExceptionGeocoder, Toast.LENGTH_LONG).show()
+        }
+
     }
 
 }

@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class DatosHoraWS(
 
-    val datetime:String,
+    val datetime:String?,
     val timezone_name:String,
     val timezone_location:String,
     val gmt_offset:Int,
