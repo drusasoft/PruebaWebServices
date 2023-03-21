@@ -31,7 +31,7 @@ class FragmentMenuPrincipal: Fragment()
         binding.txtOpcionWSPersonas.setOnClickListener { navController.navigate(R.id.irFragmentWSPersonas) }
         binding.txtOpcionWSConsultarIP.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP) }
         binding.txtOpcionWSConsultarHora.setOnClickListener { navController.navigate(R.id.irFragmentConsultarHoraMundial) }
-        binding.txtOpcionWSConsultarMoneda.setOnClickListener { Toast.makeText(requireContext(), "Aun no hecho", Toast.LENGTH_LONG).show() }
+        binding.txtOpcionWSConsultarMoneda.setOnClickListener { Toast.makeText(requireContext(), "Aun no hecho todavia", Toast.LENGTH_LONG).show() }
 
         //*********************************** Fin ClickListeners ***********************************
 
