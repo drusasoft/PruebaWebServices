@@ -7,10 +7,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.create
 
 
 
@@ -30,6 +26,16 @@ class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
     //************************************* Variables LiveData *************************************
     val datosWSLive = repositorioConsultarIPWS.datosIPLive//Variable Livedata con los datos obtenidos del WS, que esta definida en el Repositorio
     //*********************************** Fin Variables LiveData ***********************************
+
+
+
+    override fun onCleared()
+    {
+        super.onCleared()
+
+        //Se cancela el Job de la Coroutina donde se ejecuta Retrofit
+        viewModelJob.cancel()
+    }
 
 
 

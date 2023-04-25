@@ -1,7 +1,6 @@
 package com.aar.pruebawebservices.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,9 @@ import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.databinding.LayoutFragmentConsultarHoraMundialBinding
 import com.aar.pruebawebservices.models.FragmentWSConsultarHoraModel
 import com.aar.pruebawebservices.models_factory.FragmentWSConsultarHoraModelFactory
-import kotlin.concurrent.thread
+
+
+
 
 
 class FragmentWSConsultarHoraMundial: Fragment()
@@ -25,11 +26,6 @@ class FragmentWSConsultarHoraMundial: Fragment()
 
     private lateinit var navController: NavController
 
-    //******** Variable para la prueba de Reloj
-    private var finReloj = false
-    private var hora = 0
-    private var minutos = 0
-    private var segundos = 0
 
 
 

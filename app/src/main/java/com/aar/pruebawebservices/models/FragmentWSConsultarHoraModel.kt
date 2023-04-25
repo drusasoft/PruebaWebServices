@@ -2,20 +2,18 @@ package com.aar.pruebawebservices.models
 
 import android.content.Context
 import android.location.Geocoder
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.aar.pruebawebservices.R
-import com.aar.pruebawebservices.webservice.HoraService
 import com.aar.pruebawebservices.webservice.RepositorioConsultarHoraWS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.create
 import java.util.*
+
+
+
 
 
 class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
@@ -33,6 +31,15 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
     val datosWSLive = repositorioConsultarHoraWS.datosHoraLive
     //*********************************** Fin Variables LiveData ***********************************
 
+
+
+    override fun onCleared()
+    {
+        super.onCleared()
+
+        //Se cancela el Job de la Coroutina donde se ejecuta Retrofit
+        viewModelJob.cancel()
+    }
 
 
 

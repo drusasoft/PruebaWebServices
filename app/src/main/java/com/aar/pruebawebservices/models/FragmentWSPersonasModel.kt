@@ -2,7 +2,6 @@ package com.aar.pruebawebservices.models
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.aar.pruebawebservices.database.PersonaDB
 import com.aar.pruebawebservices.database.PersonaDao
 import com.aar.pruebawebservices.webservice.RepositorioPersonasWS
 import kotlinx.coroutines.*
@@ -25,6 +24,16 @@ class FragmentWSPersonasModel(private val context: Context, private val dataBase
 
     //Repsitorio donde se realiza la conexion al WS y se almacenan los resultados en la BD local
     private val repositorioPersonasWS = RepositorioPersonasWS(context, dataBase)
+    
+
+
+    override fun onCleared()
+    {
+        super.onCleared()
+
+        //Se cancela el Job de la Coroutina donde se ejecuta Retrofit
+        viewModelJob.cancel()
+    }
 
 
 
