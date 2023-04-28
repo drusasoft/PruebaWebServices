@@ -20,6 +20,9 @@
         <action
             android:id="@+id/irFragmentConsultarHoraMundial"
             app:destination="@id/fragmentConsultarHoraMundial"/>
+        <action
+            android:id="@+id/irFragmentWSConversorMoneda"
+            app:destination="@id/fragmentWSConversorMoneda" />
 
     </fragment>
 
@@ -84,6 +87,22 @@
     <fragment
         android:id="@+id/fragmentDetallesHora"
         android:name="com.aar.pruebawebservices.fragments.FragmentDetallesHora"
-        android:label="FragmentDetallesHora" />
+        android:label="FragmentDetallesHora"/>
+
+    <fragment
+        android:id="@+id/fragmentWSConversorMoneda"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSConversorMoneda"
+        android:label="FragmentWSConversorMoneda" >
+
+        <action
+            android:id="@+id/irFragmentDetallesConversorMoneda"
+            app:destination="@id/fragmentDetallesConversorMoneda"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDetallesConversorMoneda"
+        android:name="com.aar.pruebawebservices.fragments.FragmentDetallesConversorMoneda"
+        android:label="FragmentDetallesConversorMoneda"/>
 
 </navigation>

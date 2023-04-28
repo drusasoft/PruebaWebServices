@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity()
                 R.id.fragmentDetallesIP->{ binding.toolBar.setTitle(R.string.titFragmentDetallesIP)}
                 R.id.fragmentConsultarHoraMundial->{ binding.toolBar.setTitle(R.string.titFragmentConsultarHoraMundial) }
                 R.id.fragmentDetallesHora->{ binding.toolBar.setTitle(R.string.titFragmentDetallesHora)}
+                R.id.fragmentWSConversorMoneda->{ binding.toolBar.setTitle(R.string.titFragmentConversorMoneda) }
+                R.id.fragmentDetallesConversorMoneda->{ binding.toolBar.setTitle(R.string.titFragmentDetallesConversorMoneda) }
             }
 
         }

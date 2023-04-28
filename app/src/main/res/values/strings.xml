@@ -55,4 +55,15 @@
     <string name="titGmtOffset">GMT Offset:</string>
     <string name="titLocation">Location:</string>
 
+
+
+    <!-- Fragment Conversor Moneda -->
+    <string name="titFragmentConversorMoneda">Conversor Moneda</string>
+
+
+
+    <!-- Fragment Detalles Conversor Moneda -->
+    <string name="titFragmentDetallesConversorMoneda">Conversión Moneda</string>
+
+
 </resources>
