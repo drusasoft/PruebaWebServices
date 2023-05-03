@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.databinding.LayoutFragmentConversorMonedaBinding
-
-
-
+import com.aar.pruebawebservices.models.FragmentWSConversorMonedaModel
+import com.aar.pruebawebservices.models_factory.FragmentWSConversorMonedaModelFactory
 
 
 class FragmentWSConversorMoneda:Fragment()
 {
 
     private lateinit var binding:LayoutFragmentConversorMonedaBinding
-
+    private val model:FragmentWSConversorMonedaModel by viewModels{ FragmentWSConversorMonedaModelFactory(requireContext()) }
     private lateinit var navController: NavController
 
 
@@ -43,15 +43,21 @@ class FragmentWSConversorMoneda:Fragment()
                 if(!binding.edittextCantidad.text.isNullOrEmpty())
                 {
 
+
                 }else
                 {
-                    Toast.makeText(requireContext(), "Debes insertar la cantidad a convertir", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), R.string.txtErrorInsertarDatos, Toast.LENGTH_LONG).show()
                 }
 
             }else
             {
-                Toast.makeText(requireContext(), "Debes Seleccionar la Moneda de Origen y Destino del cambio", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), R.string.txtErrorSeleccMonedas, Toast.LENGTH_LONG).show()
             }
+
+            //******Para Pruebas
+            //model.pruebaCOnexionWSConversor()
+
+
         }
         //************************ Fin ClickListener ************************
 

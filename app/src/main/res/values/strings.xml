@@ -59,8 +59,8 @@
 
     <!-- Fragment Conversor Moneda -->
     <string name="titFragmentConversorMoneda">Conversor Moneda</string>
-
-
+    <string name="txtErrorSeleccMonedas">Debes Seleccionar la Moneda de Origen y Destino del cambio</string>
+    <string name="txtErrorCantidadMoneda">Debes insertar la cantidad a convertir</string>
 
     <!-- Fragment Detalles Conversor Moneda -->
     <string name="titFragmentDetallesConversorMoneda">Conversión Moneda</string>

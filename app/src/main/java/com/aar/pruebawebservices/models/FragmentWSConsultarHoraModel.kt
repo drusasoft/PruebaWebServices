@@ -19,7 +19,7 @@ import java.util.*
 class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
 {
 
-    //Repositorio deonde se realzia la Conexion con el WS
+    //Repositorio deonde se reliza la Conexion con el WS
     private val repositorioConsultarHoraWS = RepositorioConsultarHoraWS(context)
 
     //************************************ Coroutina en Hilo IO ************************************
