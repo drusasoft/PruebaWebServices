@@ -50,6 +50,7 @@ dependencies
     def version_gson = "2.8.9"
     def picasso_version = "2.71828"
     def photo_view_version = "2.3.0"
+    def version_reflexion = "1.6.21"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -85,6 +86,9 @@ dependencies
 
     //Libreria PhotoView (Para hacer zoom en las imagenes)
     implementation "com.github.chrisbanes:PhotoView:$photo_view_version"
+
+    //Libreria para poder usar la Reflexion con Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$version_reflexion"
 
     //Librerias para Test
     testImplementation 'junit:junit:4.13.2'

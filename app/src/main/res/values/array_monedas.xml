@@ -6,7 +6,7 @@
         <item>AUD, Australian Dollar</item>
         <item>BCH, Bitcoin Cash</item>
         <item>BGN, Bulgarian Lev</item>
-        <item> BNB, Binance Coin</item>
+        <item>BNB, Binance Coin</item>
         <item>BRL, Brazilian Real</item>
         <item>BTC, Bitcoin</item>
         <item>CAD, Canadian Dollar</item>
@@ -43,6 +43,7 @@
         <item>THB, Thai Baht</item>
         <item>TRY, Turkish Lira</item>
         <item>TWD, New Taiwan Dollar</item>
+        <item>USD, United States Dollar</item>
         <item>XRP, Ripple</item>
         <item>ZAR, South African Rand</item>
     </string-array>

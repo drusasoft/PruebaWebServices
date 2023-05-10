@@ -24,17 +24,22 @@ class FragmentWSConversorMonedaModel(private val context: Context):ViewModel()
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-
+    val cambioActualLive = repositorioConversorMoneda.cambioActualLive
     //*********************************** Fin Variables LiveData ***********************************
 
 
 
-
-    fun conectarWS(monedaOrigen:String, monedaDestino:String)
+    //Se llama al metodo definido en la clase repositorio que se encarga de hacer la conexion con el WS
+    fun conectarWS(monedaOrigenSelecc:String, monedaDestinoSelecc:String)
     {
 
-        coroutineScopeIO.launch {  }
+        //Se obtienen las siglas de las monedas seleccionadas en los SPinners
+        val siglasMonedaOrigen = monedaOrigenSelecc.split(",").get(0).trim()
+        val siglaMonedaDestino = monedaDestinoSelecc.split(",").get(0).trim()
+
+        coroutineScopeIO.launch { repositorioConversorMoneda.conectarWS(siglasMonedaOrigen, siglaMonedaDestino) }
 
     }
+
 
 }
