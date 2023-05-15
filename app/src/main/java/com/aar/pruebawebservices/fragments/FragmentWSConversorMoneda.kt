@@ -88,12 +88,12 @@ class FragmentWSConversorMoneda:Fragment()
             //Se calcula el valor de la cantidad introducida segun el cambio actual devuelto por el WS
             val cantidadMoneda = binding.edittextCantidad.text.toString().toFloat()
             val resultadoCambioMoneda = cantidadMoneda * cambioMoneda
+            val resultadoCambioFormateado = truncarDecimales(resultadoCambioMoneda)
 
-            val decimalFormat = DecimalFormat()
-
-            Toast.makeText(requireContext(), "Cambio Moneda: ${resultadoCambioMoneda}", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Cambio Moneda: ${resultadoCambioFormateado}", Toast.LENGTH_LONG).show()
 
             Log.e("Cambio Moneda", "${resultadoCambioMoneda}")
+            Log.e("Cambio Moneda Truncado", resultadoCambioFormateado)
 
         }
 
@@ -126,8 +126,63 @@ class FragmentWSConversorMoneda:Fragment()
     private fun truncarDecimales(cantidad:Float):String
     {
 
-        return ""
-    }
+        //Primero formateo la cantidad recibida, para que se muestren todos sus digitos en aquellos float que estan formato cientifico (Ejemplo de float con formato cientifico-> 5.2E-5)
+        val decimalFormat = DecimalFormat("################################################.###########################################")
+        val cantidadString = decimalFormat.format(cantidad)
 
+
+        val splitCantidad = cantidadString.split(".")
+
+        //Se comprueba si el catidad pasada como parametro tiene parte entera y decimal
+        if(splitCantidad.size == 2)
+        {
+            val parteEntera = splitCantidad.get(0).toInt()
+
+            //Si la parte entera es distinta de 0 entonces se trunca la parte decimal a dos digitos
+            if(parteEntera != 0)
+            {
+                return String.format("%.2f", cantidad)
+
+            }else
+            {
+                //Si la parte entera es igual a cero entonces se muestra en la parte decimal todos los ceros que tenga
+                //hasta que se encuentra el primer digito distino a cero y a parti de alli se muestran como mucho tres digitos mas
+                var digitosDistintoCero = 0
+                val parteDecimal = splitCantidad.get(1)
+                var parteDecimalFormateada = ""
+
+                parteDecimal.forEach { digito->
+
+                   when(digitosDistintoCero)
+                   {
+                       0->{//Si aun no se ha encontrado ningun digito diston de 0, se van añadiendo digitos
+
+                           parteDecimalFormateada = parteDecimalFormateada + digito
+
+                           if(digito != '0')
+                               digitosDistintoCero++
+                       }
+
+                       else->{//Si ya se ha encontrado en la parte decimal, solo se añaden como maximo 4 digitos mas
+
+                           digitosDistintoCero++
+
+                           if(digitosDistintoCero < 5)
+                               parteDecimalFormateada = parteDecimalFormateada + digito
+                       }
+
+                   }
+
+                }
+
+                return "${parteEntera}.${parteDecimalFormateada}"
+            }
+
+        }else
+        {
+            return cantidad.toString()
+        }
+
+    }
 
 }
