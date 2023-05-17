@@ -29,7 +29,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/aldrich"
-                android:text="Insertar Datos"/>
+                android:text="@string/titInsertarDatosMoneda"/>
 
             <View
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Insertar Cantidad"
+                android:hint="@string/titInsertarCantidadMoneda"
                 app:boxStrokeColor="@color/indigo_500"
                 app:hintTextColor="@color/indigo_700">
 
@@ -93,7 +93,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
-                android:text="Conversion"
+                android:text="@string/btnConversion"
                 app:shapeAppearance="@style/botonBordeRecortados"/>
 
         </LinearLayout>

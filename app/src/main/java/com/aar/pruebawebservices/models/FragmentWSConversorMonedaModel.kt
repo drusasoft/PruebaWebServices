@@ -29,6 +29,10 @@ class FragmentWSConversorMonedaModel(private val context: Context):ViewModel()
 
 
 
+    //Se limpia el contenido de la variable LiveData que se encuntra declarada en el Repositorio
+    fun limpiarVariableLiveData() { repositorioConversorMoneda.limpiarVariablesLiveData() }
+
+
     //Se llama al metodo definido en la clase repositorio que se encarga de hacer la conexion con el WS
     fun conectarWS(monedaOrigenSelecc:String, monedaDestinoSelecc:String)
     {

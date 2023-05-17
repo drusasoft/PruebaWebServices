@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="Fragment Detalles Converor Moneda"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:shapeAppearance="@style/cardViewBordeRecortados"
+        app:strokeColor="@color/indigo_500">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/indigo_700"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/aldrich"
+                android:text="@string/titResultadoConversion"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/indigo_500"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:fontFamily="@font/aldrich"
+                android:textColor="@color/indigo_500"
+                android:textSize="18sp"
+                android:text="0,333333 EUR"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </LinearLayout>

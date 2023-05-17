@@ -28,9 +28,9 @@ class RepositorioConversorMoneda(private val context:Context)
     private val retrofitService:MonedaService
 
     //************************************* Variables LiveData *************************************
-    private val _cambioActualLive = MutableLiveData<Float>()
+    private val _cambioActualLive = MutableLiveData<Float?>()
 
-    val cambioActualLive:LiveData<Float>
+    val cambioActualLive:LiveData<Float?>
         get() = _cambioActualLive
     //*********************************** Fin Variables LiveData ***********************************
 
@@ -73,6 +73,11 @@ class RepositorioConversorMoneda(private val context:Context)
         }
 
     }
+
+
+
+    //Se limpia el contenenido de las variables LiveData
+    fun limpiarVariablesLiveData() { _cambioActualLive.value = null }
 
 
 }

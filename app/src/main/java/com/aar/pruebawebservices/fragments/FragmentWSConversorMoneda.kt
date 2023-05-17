@@ -85,15 +85,24 @@ class FragmentWSConversorMoneda:Fragment()
 
         model.cambioActualLive.observe(viewLifecycleOwner){cambioMoneda->
 
-            //Se calcula el valor de la cantidad introducida segun el cambio actual devuelto por el WS
-            val cantidadMoneda = binding.edittextCantidad.text.toString().toFloat()
-            val resultadoCambioMoneda = cantidadMoneda * cambioMoneda
-            val resultadoCambioFormateado = truncarDecimales(resultadoCambioMoneda)
 
-            Toast.makeText(requireContext(), "Cambio Moneda: ${resultadoCambioFormateado}", Toast.LENGTH_LONG).show()
+            if(cambioMoneda != null)
+            {
+                //Se calcula el valor de la cantidad introducida segun el cambio actual devuelto por el WS
+                val cantidadMoneda = binding.edittextCantidad.text.toString().toFloat()
+                val resultadoCambioMoneda = cantidadMoneda * cambioMoneda
+                val resultadoCambioFormateado = truncarDecimales(resultadoCambioMoneda)
 
-            Log.e("Cambio Moneda", "${resultadoCambioMoneda}")
-            Log.e("Cambio Moneda Truncado", resultadoCambioFormateado)
+                Toast.makeText(requireContext(), "Cambio Moneda: ${resultadoCambioFormateado}", Toast.LENGTH_LONG).show()
+
+                Log.e("Cambio Moneda", "${resultadoCambioMoneda}")
+                Log.e("Cambio Moneda Truncado", resultadoCambioFormateado)
+
+                //***** Pruebas
+                navController.navigate(R.id.fragmentDetallesConversorMoneda)
+                model.limpiarVariableLiveData()
+            }
+
 
         }
 
@@ -184,5 +193,7 @@ class FragmentWSConversorMoneda:Fragment()
         }
 
     }
+
+
 
 }

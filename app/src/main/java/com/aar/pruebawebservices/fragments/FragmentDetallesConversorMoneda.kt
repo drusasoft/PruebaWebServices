@@ -17,8 +17,19 @@ class FragmentDetallesConversorMoneda: Fragment()
 {
 
     private lateinit var binding:LayoutFragmentDetallesConversorMonedaBinding
-
     private lateinit var navController: NavController
+
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
+        super.onCreate(savedInstanceState)
+
+        //Se obtienen los datos de la conversion pasados como parametros de entrada a este frgament
+        //....
+
+    }
 
 
 
@@ -30,6 +41,7 @@ class FragmentDetallesConversorMoneda: Fragment()
 
         return binding.root
     }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
