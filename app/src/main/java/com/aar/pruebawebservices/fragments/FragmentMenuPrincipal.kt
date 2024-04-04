@@ -12,9 +12,6 @@ import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.databinding.LayoutFragmentMenuPrincipalBinding
 
 
-
-
-
 class FragmentMenuPrincipal: Fragment()
 {
 
@@ -32,6 +29,7 @@ class FragmentMenuPrincipal: Fragment()
         binding.txtOpcionWSConsultarIP.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP) }
         binding.txtOpcionWSConsultarHora.setOnClickListener { navController.navigate(R.id.irFragmentConsultarHoraMundial) }
         binding.txtOpcionWSConsultarMoneda.setOnClickListener { navController.navigate(R.id.irFragmentWSConversorMoneda) }
+        binding.txtOpcionWSExchange.setOnClickListener { navController.navigate(R.id.irFragmentWSExchange) }
 
         //*********************************** Fin ClickListeners ***********************************
 

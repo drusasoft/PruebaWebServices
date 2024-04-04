@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity()
                 R.id.fragmentDetallesHora->{ binding.toolBar.setTitle(R.string.titFragmentDetallesHora)}
                 R.id.fragmentWSConversorMoneda->{ binding.toolBar.setTitle(R.string.titFragmentConversorMoneda) }
                 R.id.fragmentDetallesConversorMoneda->{ binding.toolBar.setTitle(R.string.titFragmentDetallesConversorMoneda) }
+                R.id.fragmentWSExchange->{ binding.toolBar.setTitle(R.string.titFragmentExchange) }
             }
 
         }

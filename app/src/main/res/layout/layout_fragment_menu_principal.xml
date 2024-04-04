@@ -81,6 +81,20 @@
                 android:clickable="true"
                 android:textColor="@color/color_texto"/>
 
+
+            <TextView
+                android:id="@+id/txtOpcionWSExchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="@string/txtOpcionWSExchange"
+                android:textSize="22sp"
+                android:fontFamily="@font/aldrich"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:textColor="@color/color_texto"/>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

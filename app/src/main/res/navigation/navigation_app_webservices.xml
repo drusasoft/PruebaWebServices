@@ -22,7 +22,11 @@
             app:destination="@id/fragmentConsultarHoraMundial"/>
         <action
             android:id="@+id/irFragmentWSConversorMoneda"
-            app:destination="@id/fragmentWSConversorMoneda" />
+            app:destination="@id/fragmentWSConversorMoneda"/>
+
+        <action
+            android:id="@+id/irFragmentWSExchange"
+            app:destination="@id/fragmentWSExchange"/>
 
     </fragment>
 
@@ -104,5 +108,10 @@
         android:id="@+id/fragmentDetallesConversorMoneda"
         android:name="com.aar.pruebawebservices.fragments.FragmentDetallesConversorMoneda"
         android:label="FragmentDetallesConversorMoneda"/>
+
+    <fragment
+        android:id="@+id/fragmentWSExchange"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSExchange"
+        android:label="FragmentWSExchange"/>
 
 </navigation>

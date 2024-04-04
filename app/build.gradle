@@ -7,12 +7,12 @@ plugins {
 
 android {
 
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.aar.pruebawebservices"
         minSdk 28
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -67,7 +67,7 @@ dependencies
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
-    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'//para poder instanciar los ViewModel usando la instruccion by viewModels
 
     //Libreiras para Navigation
     implementation "androidx.navigation:navigation-fragment:$nav_version"

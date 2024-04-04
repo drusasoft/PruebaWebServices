@@ -57,7 +57,7 @@ class FragmentWSConsultarHoraModel(private val context: Context):ViewModel()
         {
             val listaLocalidades = geocoder.getFromLocationName("${localidad}\n${pais}", 1)
 
-            if(listaLocalidades.size > 0)
+            if(listaLocalidades!!.size > 0)
             {
                 coroutineScopeIO.launch { repositorioConsultarHoraWS.conexionWS("${localidad}, ${pais}") }
 
