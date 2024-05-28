@@ -27,6 +27,9 @@
         <action
             android:id="@+id/irFragmentWSExchange"
             app:destination="@id/fragmentWSExchange"/>
+        <action
+            android:id="@+id/irFragmentWSConsultarIP_2"
+            app:destination="@id/fragmentWSConsultarIP_2" />
 
     </fragment>
 
@@ -113,5 +116,10 @@
         android:id="@+id/fragmentWSExchange"
         android:name="com.aar.pruebawebservices.fragments.FragmentWSExchange"
         android:label="FragmentWSExchange"/>
+
+    <fragment
+        android:id="@+id/fragmentWSConsultarIP_2"
+        android:name="com.aar.pruebawebservices.fragments.FragmentWSConsultarIP_2"
+        android:label="FragmentWSConsultarIP_2"/>
 
 </navigation>

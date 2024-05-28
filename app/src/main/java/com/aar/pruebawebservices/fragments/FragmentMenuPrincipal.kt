@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.aar.pruebawebservices.R
 import com.aar.pruebawebservices.databinding.LayoutFragmentMenuPrincipalBinding
+
+
+
 
 
 class FragmentMenuPrincipal: Fragment()
@@ -30,6 +32,7 @@ class FragmentMenuPrincipal: Fragment()
         binding.txtOpcionWSConsultarHora.setOnClickListener { navController.navigate(R.id.irFragmentConsultarHoraMundial) }
         binding.txtOpcionWSConsultarMoneda.setOnClickListener { navController.navigate(R.id.irFragmentWSConversorMoneda) }
         binding.txtOpcionWSExchange.setOnClickListener { navController.navigate(R.id.irFragmentWSExchange) }
+        binding.txtOpcionWSConsultarIP2.setOnClickListener { navController.navigate(R.id.irFragmentWSConsultarIP_2) }
 
         //*********************************** Fin ClickListeners ***********************************
 

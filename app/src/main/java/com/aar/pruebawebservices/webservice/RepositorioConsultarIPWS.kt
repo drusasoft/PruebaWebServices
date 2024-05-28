@@ -42,10 +42,6 @@ class RepositorioConsultarIPWS(private val context: Context)
 
     suspend fun conexionWS(direccionIP:String)
     {
-        //************** Para pruebas, se devuelven los datos del WS en formato String **************
-        //val resultado = retrofitService.getDatosIP("cb71b89ab513414b920bff9be723c36c", direccion_ip)
-        //Log.e("Conexion WS", "OK")
-        //Log.e("Resultado WS", "${resultado}")
 
         try
         {

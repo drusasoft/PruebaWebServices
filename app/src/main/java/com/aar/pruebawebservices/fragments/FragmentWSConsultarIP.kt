@@ -41,7 +41,7 @@ class FragmentWSConsultarIP:Fragment()
 
             }else
             {
-                Toast.makeText(requireContext(), "Debes introducir una direccion IP", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), R.string.txtErrorInsertarIP, Toast.LENGTH_LONG).show()
             }
 
         }

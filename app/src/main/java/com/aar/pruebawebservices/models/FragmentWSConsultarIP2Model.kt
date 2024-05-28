@@ -2,7 +2,7 @@ package com.aar.pruebawebservices.models
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.aar.pruebawebservices.webservice.RepositorioConsultarIPWS
+import com.aar.pruebawebservices.webservice.RepositorioConsultarIPWS_2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -12,11 +12,10 @@ import kotlinx.coroutines.launch
 
 
 
-class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
+class FragmentWSConsultarIP2Model(private val context: Context):ViewModel()
 {
-
     //Repositorio deonde se realzia la Conexion con el WS
-    val repositorioConsultarIPWS = RepositorioConsultarIPWS(context)
+    private val repositorioConsultarIPWS = RepositorioConsultarIPWS_2(context)
 
     //************************************ Coroutina en Hilo IO ************************************
     private val viewModelJob = Job()
@@ -24,7 +23,7 @@ class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
     //********************************** Fin Coroutina en Hilo IO **********************************
 
     //************************************* Variables LiveData *************************************
-    val datosWSLive = repositorioConsultarIPWS.datosIPLive//Variable Livedata con los datos obtenidos del WS, que esta definida en el Repositorio
+    val datosIPLive = repositorioConsultarIPWS.datosIPLive
     //*********************************** Fin Variables LiveData ***********************************
 
 
@@ -39,16 +38,12 @@ class FragmentWSConsultarIPModel(private val context: Context):ViewModel()
 
 
 
-    fun limpiarVariablesLiveData()
+    //Se realiza la COnexion con el WS para obtener todos los datos de la Direccion IP pasada como parametro
+    fun realizarConexionWS(direccionIP:String)
     {
-        repositorioConsultarIPWS.datosIPLive.value?.direccion_ip = "--"
-    }
+        //Antes de hacer la consulta al WS, se limpia el contenido de la variable LiveData de consultas anteriores
+        repositorioConsultarIPWS.limpiarVariablesLiveData()
 
-
-
-    //Se realiza la conexion con WS
-    fun conectarWSIP(direccionIP:String)
-    {
         coroutineScopeIO.launch { repositorioConsultarIPWS.conexionWS(direccionIP) }
     }
 

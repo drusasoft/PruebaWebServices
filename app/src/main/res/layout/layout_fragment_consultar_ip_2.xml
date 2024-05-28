@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.aar.pruebawebservices.models.FragmentWSConsultarIP2Model" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ******************* CardView donde se introduce la IP a Consultar ********************!-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:shapeAppearance="@style/cardViewBordeRecortados"
+                app:strokeColor="@color/indigo_500">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="@string/hintIP">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextIP"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnConexionWS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        android:text="@string/txtBotonConsultarIP"
+                        app:shapeAppearance="@style/botonBordeRecortados" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ******************* CardView donde se muestran los datos de la IP ********************!-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:shapeAppearance="@style/cardViewBordeRecortados">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/titDatosIP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/aldrich"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titDetallesIP"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <View
+                        android:id="@+id/separador"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/indigo_700"
+                        app:layout_constraintTop_toBottomOf="@+id/titDatosIP"/>
+
+                    <TextView
+                        android:id="@+id/titPais"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titPais"
+                        app:layout_constraintTop_toBottomOf="@+id/separador"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtPais"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/separador"
+                        app:layout_constraintStart_toEndOf="@+id/titPais"
+                        android:text="@{model.datosIPLive.pais}"/>
+
+
+                    <TextView
+                        android:id="@+id/titCiudad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titCiudad"
+                        app:layout_constraintTop_toBottomOf="@+id/titPais"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtCiudad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titPais"
+                        app:layout_constraintStart_toEndOf="@+id/titCiudad"
+                        android:text="@{model.datosIPLive.ciudad}"/>
+
+
+                    <TextView
+                        android:id="@+id/titRegion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titRegion"
+                        app:layout_constraintTop_toBottomOf="@+id/titCiudad"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtRegion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titCiudad"
+                        app:layout_constraintStart_toEndOf="@+id/titRegion"
+                        android:text="@{model.datosIPLive.nombreRegion}"/>
+
+
+                    <TextView
+                        android:id="@+id/titCP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titCP"
+                        app:layout_constraintTop_toBottomOf="@+id/titRegion"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtCP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titRegion"
+                        app:layout_constraintStart_toEndOf="@+id/titCP"
+                        android:text="@{model.datosIPLive.codigoPostal}"/>
+
+                    <TextView
+                        android:id="@+id/titLatitud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titLatitud"
+                        app:layout_constraintTop_toBottomOf="@+id/titCP"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtLatitud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titCP"
+                        app:layout_constraintStart_toEndOf="@+id/titLatitud"
+                        android:text="@{model.datosIPLive.latitud}"/>
+
+                    <TextView
+                        android:id="@+id/titLongitud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titLongitud"
+                        app:layout_constraintTop_toBottomOf="@+id/titLatitud"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtLongitud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titLatitud"
+                        app:layout_constraintStart_toEndOf="@+id/titLongitud"
+                        android:text="@{model.datosIPLive.longitud}"/>
+
+                    <TextView
+                        android:id="@+id/titProveedorInternet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_500"
+                        android:textStyle="bold"
+                        android:text="@string/titProveedorInternet"
+                        app:layout_constraintTop_toBottomOf="@+id/titLongitud"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtProveedorInternet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/indigo_200"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/titLongitud"
+                        app:layout_constraintStart_toEndOf="@+id/titProveedorInternet"
+                        android:text="@{model.datosIPLive.proveedor}"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
